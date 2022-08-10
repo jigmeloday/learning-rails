@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="friends">
+
+<!--    <p>-->
+
+<!--    </p>-->
+</div>
+
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Handle</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @friends.each_with_index  do |friend, index| %>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td><%= friend[:first_name] %></td>
+      <td><%= friend[:last_name] %></td>
+      <td><%= friend[:phone] %></td>
+      <td><%= friend[:email] %></td>
+      <td>
+        <%= link_to "Show this friend", friend %>
+        <%= button_to "Destroy this friend", @friend, method: :delete %>
+
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
